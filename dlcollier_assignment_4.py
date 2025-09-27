@@ -35,3 +35,22 @@ elif choice == "C":
         current_gpa = current_gpa - 0.3
 else:
     print("INVALID SELECTION. PARAMETERS UNCHANGED.")
+
+# step 3 - study strategy
+study_options = ["Programming", "Math", "English", "History"]
+print(f"\nAVAILABLE STUDY MODULES: {study_options}")
+
+subj = input("INPUT MODULE: ")
+
+if subj in study_options:
+    # ai helped me figure out this with logic in,and,or
+    if subj == "Programming" and stress_level > 80:
+        current_gpa = current_gpa - 0.1
+    elif subj == "Math" or subj == "English":
+        current_gpa = current_gpa + 0.1
+        social_points = social_points - 5
+    elif subj == "History" and (study_hours > 10 and stress_level < 70):
+        social_points = social_points + 10
+elif subj not in study_options:
+    print("ERROR: INVALID MODULE SELECTED. GPA -0.1")
+    current_gpa = current_gpa - 0.1
