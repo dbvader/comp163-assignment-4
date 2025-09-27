@@ -54,3 +54,31 @@ if subj in study_options:
 elif subj not in study_options:
     print("ERROR: INVALID MODULE SELECTED. GPA -0.1")
     current_gpa = current_gpa - 0.1
+
+# step 4 - semester wrap up
+print("\n>>> FINAL SEMESTER ASSESSMENT <<<")
+
+if type(current_gpa) is not float:
+    print("ERROR: GPA NOT FLOAT TYPE. SYSTEM MALFUNCTION.")
+else:
+    print("SYSTEM CHECK: GPA STORED AS FLOAT... OK.")
+
+if current_gpa >= 3.5:
+    if stress_level < 70:
+        ending = "YOU HAVE MADE THE DEAN'S LIST. STATUS: ELITE STUDENT MODE."
+    else:
+        ending = "YOU HAVE MAINTAINED GPA > 3.5 BUT SYSTEM REPORTS: BURNOUT DETECTED."
+elif current_gpa >= 2.0:
+    if social_points > 50:
+        ending = "YOU HAVE SURVIVED THE SEMESTER WITH BALANCE. GPA: AVERAGE. SOCIAL LIFE: ONLINE."
+    else:
+        ending = "YOU HAVE PASSED. HOWEVER, SOCIAL INTERACTIONS: MINIMAL. RESULT: MEDIOCRE PATHWAY."
+else:
+    ending = "YOU HAVE ACHIEVED ACADEMIC PROBATION. SYSTEM FLAG: CRITICAL FAILURE."
+
+print("\n--- FINAL STUDENT STATS ---")
+print(f"GPA: {current_gpa}")
+print(f"HOURS: {study_hours}")
+print(f"SOCIAL: {social_points}")
+print(f"STRESS: {stress_level}")
+print(f"OUTCOME: {ending}")
